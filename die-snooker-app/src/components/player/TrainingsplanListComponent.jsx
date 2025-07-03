@@ -1,5 +1,5 @@
 import React from 'react';
-import HistoryListComponent from '../shared/HistoryListComponent';
+import HistoryListComponent from '../shared/HistoryListComponent.jsx';
 
 const TrainingsplanListComponent = ({ records }) => {
   const renderSummary = (record) => {

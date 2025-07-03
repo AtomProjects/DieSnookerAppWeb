@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
 import { db } from '../../../firebaseConfig'; // Direct db import
-import ChartComponentWrapper from '../../shared/ChartComponentWrapper';
+import ChartComponentWrapper from '../../shared/ChartComponentWrapper.jsx';
 
 // Helper function to get week number (ISO 8601)
 const getWeekNumber = (d) => {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import { fetchUserExerciseDefinitions } from '../../services/ExerciseDefinitionService';
 import { fetchExerciseRecords } from '../../services/ExerciseRecordService';
-import ExerciseCardComponent from '../../components/player/ExerciseCardComponent';
+import ExerciseCardComponent from '../../components/player/ExerciseCardComponent.jsx';
 
 const ExercisesSection = () => {
   const { currentUser } = useAuth();

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import { fetchCollectionByUser } from '../../services/firebaseService';
-import TrainingsplanListComponent from '../../components/player/TrainingsplanListComponent';
+import TrainingsplanListComponent from '../../components/player/TrainingsplanListComponent.jsx';
 
 const TrainingsplanSection = () => {
   const { currentUser } = useAuth();

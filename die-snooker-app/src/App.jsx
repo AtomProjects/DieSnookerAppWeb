@@ -1,17 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './contexts/AuthContext';
-import { UserProfileProvider } from './contexts/UserProfileContext';
+import { AuthProvider } from './contexts/AuthContext.jsx';
+import { UserProfileProvider } from './contexts/UserProfileContext.jsx';
 
-import ProtectedRoute from './components/ProtectedRoute';
-import PlayerApp from './pages/PlayerApp';
-import LoginPage from './pages/LoginPage';
-import TrainerRegistrationPage from './pages/trainer/TrainerRegistrationPage';
-import TrainerDashboardPage from './pages/trainer/TrainerDashboardPage';
-// import TrainerLoginPage from './pages/trainer/TrainerLoginPage'; // No longer separate
-import LoginPage from './pages/LoginPage'; // Used for trainer login as well
+import ProtectedRoute from './components/ProtectedRoute.jsx';
+import PlayerApp from './pages/PlayerApp.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import TrainerRegistrationPage from './pages/trainer/TrainerRegistrationPage.jsx'; // Renamed
+import TrainerDashboardPage from './pages/trainer/TrainerDashboardPage.jsx'; // Renamed
 
-import './App.css'; // Keep or modify global styles
+import './App.css';
 
 function App() {
   return (

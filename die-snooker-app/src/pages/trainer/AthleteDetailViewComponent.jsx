@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
+// useAuth and useUserProfile not directly needed here if parent handles auth checks for dashboard access
 import { fetchUserExerciseDefinitions } from '../../services/ExerciseDefinitionService';
-import RawDataViewComponent from './RawDataViewComponent';
-import styles from './AthleteDetailView.module.css'; // Import CSS module
+import RawDataViewComponent from './RawDataViewComponent.jsx';
+import styles from './AthleteDetailView.module.css';
 
 // Shared components
 import DateRangePicker from '../../components/shared/DateRangePicker';

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import { useUserProfile } from '../../contexts/UserProfileContext';
+import { useAuth } from '../../contexts/AuthContext.jsx';
+import { useUserProfile } from '../../contexts/UserProfileContext.jsx';
 import { handleAddTrainerConnection, loadUserConnections, deleteConnection } from '../../services/UserConnectionService';
 
 const UserManagementConnectionsSection = () => {

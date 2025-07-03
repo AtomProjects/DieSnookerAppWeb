@@ -1,5 +1,5 @@
 import React from 'react';
-import ChartComponentWrapper from '../shared/ChartComponentWrapper';
+import ChartComponentWrapper from '../shared/ChartComponentWrapper.jsx';
 
 const TrainingChartComponent = ({ trainingRecords }) => {
   if (!trainingRecords || trainingRecords.length === 0) {

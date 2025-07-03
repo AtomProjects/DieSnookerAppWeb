@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import ChartComponentWrapper from '../shared/ChartComponentWrapper';
+import ChartComponentWrapper from '../shared/ChartComponentWrapper.jsx';
 import cardStyles from '../../styles/Card.module.css'; // Import card styles
 
 const ExerciseCardComponent = ({ definition, records }) => {

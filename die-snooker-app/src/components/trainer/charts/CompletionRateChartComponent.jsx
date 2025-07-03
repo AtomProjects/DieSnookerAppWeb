@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { collection, query, where, getDocs, orderBy } from 'firebase/firestore';
 import { db } from '../../../firebaseConfig';
-import ChartComponentWrapper from '../../shared/ChartComponentWrapper';
+import ChartComponentWrapper from '../../shared/ChartComponentWrapper.jsx';
 
 // Helper to get week key (YYYY-Www), same as in PerformanceTrendsChart
 const getWeekNumber = (d) => {

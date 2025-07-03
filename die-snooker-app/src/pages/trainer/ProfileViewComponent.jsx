@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import { useUserProfile } from '../../contexts/UserProfileContext';
+import { useAuth } from '../../contexts/AuthContext.jsx';
+import { useUserProfile } from '../../contexts/UserProfileContext.jsx';
 import { updateUserProfile } from '../../services/UserProfileService'; // Using the service here
 
 const ProfileViewComponent = () => {

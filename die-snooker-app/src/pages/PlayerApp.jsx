@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { useUserProfile } from '../contexts/UserProfileContext';
-import SidebarComponent from '../components/player/SidebarComponent';
-import MainContentComponent from '../components/player/MainContentComponent';
+import { useAuth } from '../contexts/AuthContext.jsx';
+import { useUserProfile } from '../contexts/UserProfileContext.jsx';
+import SidebarComponent from '../components/player/SidebarComponent.jsx';
+import MainContentComponent from '../components/player/MainContentComponent.jsx';
 import styles from '../styles/Layout.module.css'; // Import layout styles
 
 const PlayerApp = () => {

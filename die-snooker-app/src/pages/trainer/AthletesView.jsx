@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import { useUserProfile } from '../../contexts/UserProfileContext';
+import { useAuth } from '../../contexts/AuthContext.jsx';
+import { useUserProfile } from '../../contexts/UserProfileContext.jsx';
 import { loadUserConnections, updateConnectionStatus } from '../../services/UserConnectionService';
-import AthleteCardComponent from '../../components/trainer/AthleteCardComponent';
-import AthleteDetailViewComponent from './AthleteDetailViewComponent';
+import AthleteCardComponent from '../../components/trainer/AthleteCardComponent.jsx';
+import AthleteDetailViewComponent from './AthleteDetailViewComponent.jsx';
 import cardStyles from '../../styles/Card.module.css'; // For pendingConnectionCard
 
 const AthletesView = () => {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import { fetchCollectionByUser } from '../../services/firebaseService';
-import TrainingHistoryListComponent from '../../components/player/TrainingHistoryListComponent';
-import QuestionsHistoryListComponent from '../../components/player/QuestionsHistoryListComponent';
-import TrainingChartComponent from '../../components/player/TrainingChartComponent';
+import TrainingHistoryListComponent from '../../components/player/TrainingHistoryListComponent.jsx';
+import QuestionsHistoryListComponent from '../../components/player/QuestionsHistoryListComponent.jsx';
+import TrainingChartComponent from '../../components/player/TrainingChartComponent.jsx';
 
 const SelfAssessmentSection = () => {
   const { currentUser } = useAuth();

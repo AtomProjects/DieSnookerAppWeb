@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
-import { useUserProfile } from '../../contexts/UserProfileContext';
-import TrainerSidebarComponent from '../../components/trainer/SidebarComponent';
-import AthletesView from './AthletesView';
-import ProfileViewComponent from './ProfileViewComponent';
+import { useAuth } from '../../contexts/AuthContext.jsx';
+import { useUserProfile } from '../../contexts/UserProfileContext.jsx';
+import TrainerSidebarComponent from '../../components/trainer/SidebarComponent.jsx';
+import AthletesView from './AthletesView.jsx';
+import ProfileViewComponent from './ProfileViewComponent.jsx';
 import styles from '../../styles/Layout.module.css'; // Import layout styles
 
 const TrainerDashboardPage = () => {

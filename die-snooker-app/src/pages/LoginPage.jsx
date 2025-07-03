@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Navigate, Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { useUserProfile } from '../contexts/UserProfileContext';
+import { useAuth } from '../contexts/AuthContext.jsx';
+import { useUserProfile } from '../contexts/UserProfileContext.jsx';
 import styles from '../styles/Form.module.css'; // Import CSS module
 
 const LoginPage = () => {

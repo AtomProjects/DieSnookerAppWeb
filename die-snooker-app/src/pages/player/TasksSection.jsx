@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import { fetchCollectionByUser } from '../../services/firebaseService';
-import TaskHistoryListComponent from '../../components/player/TaskHistoryListComponent';
+import TaskHistoryListComponent from '../../components/player/TaskHistoryListComponent.jsx';
 
 const TasksSection = () => {
   const { currentUser } = useAuth();

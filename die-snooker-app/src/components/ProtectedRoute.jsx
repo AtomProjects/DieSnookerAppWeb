@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { useUserProfile } from '../contexts/UserProfileContext'; // Will be used for role-based protection
+import { useAuth } from '../contexts/AuthContext.jsx';
+import { useUserProfile } from '../contexts/UserProfileContext.jsx'; // Will be used for role-based protection
 
 const ProtectedRoute = ({ allowedRoles }) => {
   const { currentUser, loadingAuthState } = useAuth();

@@ -1,9 +1,9 @@
 import React from 'react';
-import SelfAssessmentSection from '../../pages/player/SelfAssessmentSection';
-import ExercisesSection from '../../pages/player/ExercisesSection';
-import TasksSection from '../../pages/player/TasksSection';
-import TrainingsplanSection from '../../pages/player/TrainingsplanSection';
-import UserManagementConnectionsSection from '../../pages/player/UserManagementConnectionsSection';
+import SelfAssessmentSection from '../../pages/player/SelfAssessmentSection.jsx';
+import ExercisesSection from '../../pages/player/ExercisesSection.jsx';
+import TasksSection from '../../pages/player/TasksSection.jsx';
+import TrainingsplanSection from '../../pages/player/TrainingsplanSection.jsx';
+import UserManagementConnectionsSection from '../../pages/player/UserManagementConnectionsSection.jsx';
 import styles from '../../styles/Layout.module.css'; // Import layout styles
 
 const MainContentComponent = ({ activeSection }) => {

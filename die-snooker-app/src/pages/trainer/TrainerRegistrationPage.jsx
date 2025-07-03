@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'; // Added Link
-import { useAuth } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext.jsx';
 import styles from '../../styles/Form.module.css'; // Import CSS module
 
 const TrainerRegistrationPage = () => {
