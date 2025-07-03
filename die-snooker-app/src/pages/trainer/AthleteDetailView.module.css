@@ -1,0 +1,80 @@
+.detailHeader {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.backButton {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+}
+.backButton:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+.globalFilters {
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  background-color: var(--light-color);
+  margin-bottom: 1.5rem;
+}
+.globalFilters h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+.rawDataButton {
+    padding: 0.5rem 0.75rem;
+    background-color: var(--info-color);
+    color: white;
+    border: none;
+}
+.rawDataButton:hover {
+    background-color: darken(var(--info-color), 10%);
+}
+
+
+.performanceSection {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+.performanceSection h3 {
+  margin-top: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.exercisePerformanceArea {
+  composes: performanceSection;
+  border-left: 4px solid var(--primary-color); /* Blue for exercise */
+  background-color: #e7f3ff; /* Light blue tint */
+}
+.exercisePerformanceArea h3 {
+    color: var(--primary-color);
+}
+
+.mentalPerformanceArea {
+  composes: performanceSection;
+  border-left: 4px solid var(--warning-color); /* Orange for mental */
+  background-color: #fff8e1; /* Light orange/yellow tint */
+}
+.mentalPerformanceArea h3 {
+    color: darken(var(--warning-color),10%);
+}
+
+.noPermissionMessage {
+    font-style: italic;
+    color: var(--text-muted-color);
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+}

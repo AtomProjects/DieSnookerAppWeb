@@ -1,0 +1,157 @@
+.card {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 1.25rem; /* ~20px */
+  margin-bottom: 1rem; /* Default spacing, can be overridden by grid gap */
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* For grid layouts to make cards in a row same height */
+}
+
+.cardHeader {
+  font-size: 1.2rem; /* h4 equivalent */
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.cardSubHeader {
+    font-size: 1rem; /* h5 equivalent */
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-muted-color);
+}
+
+.cardBody {
+  flex: 1 1 auto; /* Allows card body to grow and shrink */
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--text-muted-color);
+  margin-bottom: 0.5rem;
+}
+
+.card ul {
+    font-size: 0.9rem;
+    padding-left: 1.2rem; /* Indent list items */
+    margin-bottom: 0.5rem;
+}
+.card li {
+    margin-bottom: 0.25rem;
+}
+
+
+.cardFooter {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Specific for ExerciseCard */
+.exerciseCardChartArea {
+  height: 180px; /* Increased height for better chart visibility */
+  margin-bottom: 1rem;
+  width: 100%; /* Ensure it takes full width of card */
+}
+
+.exerciseCardTimeframeSelect {
+    margin-bottom: 1rem;
+    font-size: 0.9em;
+}
+.exerciseCardTimeframeSelect label {
+    margin-right: 0.5rem;
+}
+.exerciseCardTimeframeSelect select {
+    padding: 0.25rem 0.5rem; /* Smaller padding for select */
+    font-size: 0.9em;
+}
+
+.exerciseCardTimesList {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.85em;
+    max-height: 100px;
+    overflow-y: auto;
+    margin-top: 0.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+}
+.exerciseCardTimesList li {
+    padding: 2px 0;
+}
+
+
+/* Specific for AthleteCard */
+.athleteCard {
+  composes: card; /* Inherit base card styles */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.athleteCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1);
+}
+
+.athleteCard .statusActive {
+    color: var(--success-color);
+    font-weight: bold;
+}
+.athleteCard .statusPending {
+    color: var(--warning-color);
+    font-weight: bold;
+}
+.athleteCard .statusOther {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.athleteCardButton { /* For the 'View Details' button */
+    margin-top: 1rem;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    text-align: center;
+    display: inline-block; /* Or block if it should be full width */
+}
+.athleteCardButton:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+
+/* Styles for pending connection cards in AthletesView */
+.pendingConnectionCard {
+  composes: card;
+  border-left: 4px solid var(--warning-color); /* Highlight pending */
+  background-color: #fffaf0; /* Light yellow */
+}
+.pendingConnectionCard .cardHeader {
+    color: darken(var(--warning-color), 10%);
+}
+.pendingConnectionCard button {
+    font-size: 0.9em;
+    padding: 0.4rem 0.8rem;
+}
+.pendingConnectionCard .acceptButton {
+    background-color: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+    margin-right: 0.5rem;
+}
+.pendingConnectionCard .acceptButton:hover {
+    background-color: darken(var(--success-color), 10%);
+}
+.pendingConnectionCard .rejectButton {
+    background-color: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+}
+.pendingConnectionCard .rejectButton:hover {
+    background-color: darken(var(--danger-color), 10%);
+}

@@ -1,0 +1,74 @@
+.formContainer {
+  max-width: 500px; /* Increased slightly from 400px */
+  margin: 40px auto;
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: #fff; /* Ensure it's white on potentially grey body */
+  box-shadow: var(--box-shadow);
+}
+
+.formContainer h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Input and select already styled globally in index.css */
+
+.submitButton {
+  width: 100%;
+  padding: 0.5rem 0.75rem; /* Slightly adjusted padding */
+  font-size: 1.05rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+}
+.submitButton:hover {
+  background-color: darken(var(--primary-color), 10%);
+  border-color: darken(var(--primary-color), 10%);
+}
+.submitButton:disabled {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.errorMessage {
+  color: var(--danger-color);
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.successMessage {
+  color: var(--success-color);
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.formFooterText {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--text-muted-color);
+}
+.formFooterText a {
+    font-weight: 500;
+}

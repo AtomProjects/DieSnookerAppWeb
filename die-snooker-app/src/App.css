@@ -1,0 +1,19 @@
+/* App.css - Minimal application-specific global styles */
+
+/* Ensure the App component itself can grow if needed, though #root in index.css handles this mostly */
+/* .App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+} */
+
+/* Example: General container styling if needed across multiple pages */
+/* .page-container {
+  padding: 20px;
+  flex-grow: 1;
+} */
+
+/* Specific overrides or very global app styles can go here.
+   For now, index.css handles most base styling.
+   Component-specific styles are preferred for modularity.
+*/

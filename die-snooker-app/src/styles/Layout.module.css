@@ -1,0 +1,124 @@
+.appLayout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background-color); /* Ensure app background is consistent */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 260px; /* Slightly wider */
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  background-color: #f8f9fa; /* A light grey, var(--light-color) */
+  padding: 20px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make sidebar fixed height of viewport */
+  position: sticky; /* Sticky sidebar */
+  top: 0;
+}
+
+.sidebarHeader {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem; /* Adjusted */
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+.sidebarNav {
+  flex-grow: 1;
+}
+
+.sidebarNav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarNavItem button { /* Styling for buttons used as nav links */
+  all: unset; /* Reset browser defaults */
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem; /* Adjusted padding */
+  margin-bottom: 0.5rem; /* Spacing between items */
+  text-align: left;
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.sidebarNavItem button:hover {
+  background-color: #e9ecef; /* var(--secondary-color) lightened or similar */
+  color: var(--primary-color);
+}
+
+.sidebarNavItem button.active { /* Example active state */
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+.sidebarFooter {
+  margin-top: auto; /* Pushes footer to the bottom */
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.sidebarFooter p {
+    margin: 0.25rem 0;
+    font-size: 0.9em;
+}
+.sidebarFooter strong {
+    font-weight: 500;
+}
+.sidebarFooter .email {
+    color: var(--text-muted-color);
+    font-size: 0.8em;
+    word-break: break-all;
+}
+
+.sidebarFooter button.logoutButton { /* Specific logout button style */
+  width: 100%;
+  margin-top: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  border: 1px solid var(--secondary-color);
+}
+.sidebarFooter button.logoutButton:hover {
+  background-color: darken(var(--secondary-color), 10%);
+  border-color: darken(var(--secondary-color), 10%);
+}
+
+
+/* Main Content Styles */
+.mainContent {
+  flex-grow: 1;
+  padding: 25px; /* Consistent padding */
+  overflow-y: auto;
+  background-color: #fff; /* Or a very light grey for contrast with cards */
+}
+
+/* Specific to Trainer Sidebar, if different colors are desired */
+.trainerSidebar {
+    composes: sidebar; /* Inherits all styles from .sidebar */
+    background-color: #e9ecef; /* Example: different bg for trainer */
+}
+.trainerSidebar .sidebarHeader {
+    color: var(--primary-color); /* Example: different header color */
+}
+.trainerSidebar .sidebarNavItem button:hover {
+  background-color: #dde1e5;
+  color: var(--primary-color);
+}
+.trainerSidebar .sidebarNavItem button.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+.trainerSidebar .sidebarFooter button.logoutButton {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.trainerSidebar .sidebarFooter button.logoutButton:hover {
+  background-color: darken(var(--primary-color), 10%);
+  border-color: darken(var(--primary-color), 10%);
+}
