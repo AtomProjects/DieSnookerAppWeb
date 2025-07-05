@@ -52,11 +52,31 @@ const AthleteDetailViewComponent = ({ athleteConnection, onBack }) => {
   // Permissions check (example, adjust based on actual structure in connectionDetails.permissions or .trainerAccess etc.)
   // The project description mentions: connection.trainerAccess and connection.mentalTrainerAccess
   // Let's assume these are objects like: { viewScores: true, viewRawData: false }
-  const canViewExerciseCharts = connectionDetails?.trainerAccess?.viewExerciseData || connectionDetails?.permissions?.trainerAccess?.viewExerciseData || false;
-  const canViewMentalCharts = connectionDetails?.mentalTrainerAccess?.viewMentalData || connectionDetails?.permissions?.mentalTrainerAccess?.viewMentalData || false;
-  // Fallback to general permissions if specific access fields aren't populated yet (e.g. during player request phase)
-  const generalExercisePermission = connectionDetails?.permissions?.viewExerciseData || false;
-  const generalMentalPermission = connectionDetails?.permissions?.viewMentalData || false;
+  // const canViewExerciseCharts = connectionDetails?.trainerAccess?.viewExerciseData || connectionDetails?.permissions?.trainerAccess?.viewExerciseData || false;
+  // const canViewMentalCharts = connectionDetails?.mentalTrainerAccess?.viewMentalData || connectionDetails?.permissions?.mentalTrainerAccess?.viewMentalData || false;
+  // // Fallback to general permissions if specific access fields aren't populated yet (e.g. during player request phase)
+  // const generalExercisePermission = connectionDetails?.permissions?.viewExerciseData || false;
+  // const generalMentalPermission = connectionDetails?.permissions?.viewMentalData || false;
+
+  const cd = connectionDetails || {}; // Ensure connectionDetails is not null/undefined
+
+  // For Exercise Charts
+  const hasTrainerAccessForExercise = cd.trainerAccess && typeof cd.trainerAccess.viewExerciseData === 'boolean'
+    ? cd.trainerAccess.viewExerciseData
+    : false;
+  const hasGeneralPermissionForExercise = cd.permissions && typeof cd.permissions.viewExerciseData === 'boolean'
+    ? cd.permissions.viewExerciseData
+    : false;
+  const finalCanViewExerciseCharts = hasTrainerAccessForExercise || hasGeneralPermissionForExercise;
+
+  // For Mental Charts
+  const hasMentalTrainerAccessForMental = cd.mentalTrainerAccess && typeof cd.mentalTrainerAccess.viewMentalData === 'boolean'
+    ? cd.mentalTrainerAccess.viewMentalData
+    : false;
+  const hasGeneralPermissionForMental = cd.permissions && typeof cd.permissions.viewMentalData === 'boolean'
+    ? cd.permissions.viewMentalData
+    : false;
+  const finalCanViewMentalCharts = hasMentalTrainerAccessForMental || hasGeneralPermissionForMental;
 
 
   if (!athlete) {
@@ -86,7 +106,7 @@ const AthleteDetailViewComponent = ({ athleteConnection, onBack }) => {
         </button>
       </div>
 
-      {(canViewExerciseCharts || generalExercisePermission) ? (
+      {finalCanViewExerciseCharts ? (
         <section className={styles.exercisePerformanceArea}>
           <h3>Exercise Performance Area</h3>
           {loadingDefs && <p>Loading exercise definitions...</p>}
@@ -105,7 +125,7 @@ const AthleteDetailViewComponent = ({ athleteConnection, onBack }) => {
         <p className={styles.noPermissionMessage}>No permission to view exercise charts for this athlete.</p>
       )}
 
-      {(canViewMentalCharts || generalMentalPermission) ? (
+      {finalCanViewMentalCharts ? (
         <section className={styles.mentalPerformanceArea}>
           <h3>Mental Performance Area</h3>
           <SelfAssessmentChartComponent athleteId={athlete.id} dateRange={dateRange} />

@@ -148,9 +148,38 @@ export const updateConnectionStatus = async (connectionId, newStatus, newPermiss
         status: newStatus,
         lastUpdated: serverTimestamp(),
     };
+
     if (newStatus === 'ACTIVE' && newPermissions) {
-        updateData.permissions = newPermissions; // Or specific fields like trainerAccess, mentalTrainerAccess
+        // Fetch the connection to determine trainerType for setting specific access fields
+        const connectionSnap = await getDoc(connectionRef);
+        if (connectionSnap.exists()) {
+            const connectionData = connectionSnap.data();
+            if (connectionData.trainerType === 'TRAINER') {
+                updateData.trainerAccess = newPermissions;
+                // Optionally clear mentalTrainerAccess if it exists and shouldn't persist
+                // updateData.mentalTrainerAccess = deleteField(); // If you want to ensure it's removed
+            } else if (connectionData.trainerType === 'MENTAL_TRAINER') {
+                updateData.mentalTrainerAccess = newPermissions;
+                // Optionally clear trainerAccess
+                // updateData.trainerAccess = deleteField();
+            }
+            // The general 'permissions' field (player's request) can be left as is,
+            // or updated if the trainer modified permissions during acceptance.
+            // For now, we assume newPermissions IS the set to be granted.
+            // If newPermissions came from player's request, this effectively copies it to the specific access field.
+            // updateData.permissions = newPermissions; // If we want to keep permissions field as the granted one too
+        } else {
+            console.error(`Connection document ${connectionId} not found when trying to set access fields.`);
+            // Handle error or proceed without setting specific access fields
+        }
     }
+    // If status is REJECTED or TERMINATED, we might want to clear trainerAccess/mentalTrainerAccess
+    // import { deleteField } from 'firebase/firestore'; // Would be needed at the top
+    // if (newStatus === 'REJECTED' || newStatus === 'TERMINATED') {
+    //     updateData.trainerAccess = deleteField();
+    //     updateData.mentalTrainerAccess = deleteField();
+    // }
+
     await updateDoc(connectionRef, updateData);
 };
 
